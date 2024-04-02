@@ -8,8 +8,8 @@ list(APPEND DML_SECURITY_COMPILE_OPTIONS
   -fstack-protector
   --param=ssp-buffer-size=8
   -fstack-clash-protection
-  -U_FORTIFY_SOURCE
-  -D_FORTIFY_SOURCE=2
+  $<$<CONFIG:RELEASE>:-U_FORTIFY_SOURCE>
+  $<$<CONFIG:RELEASE>:-D_FORTIFY_SOURCE=2>
   )
 
 
